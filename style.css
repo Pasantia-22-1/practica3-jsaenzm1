@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    background-color: black;
+}
+
+.container{
+    margin-top: 100px;
+}
+
+.content{
+    display: flex;
+    justify-content:space-between; /*centrar en horizontal*/
+    align-items: center;
+
+}
+
+.zoom__info *{
+    margin: 0;
+    width: 100%;
+    position: absolute;
+}
+
+/*after, seudo clase: después de haber creado el div, ahora le vas a crear estas modificaciones */ 
+.zoom__info::after{
+    content: "+"; /*el + da efecto de zoom*/
+    color: #fff;
+    font-size: 40px;
+    text-align: center; 
+    font-weight: 600px;  /* pone más ancha la letra*/
+
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 100px;
+
+    border: 1px solid #fff;
+    width: 40px;
+    height:40px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.6);
+    display: none;
+}
+
+.zoom__info:hover::after{
+    display: block;
+    cursor: pointer;
+}
+
+.content__img{
+    width: 250px;
+    height: 250px;
+    border-radius: 10%;
+    border: solid #fff
+}
+
+.content__img:hover{
+    transform: scale(1.5); /*transform: sirve para aumentar el tamaño de la imagen*/
+    transition: 0.8s; /*para darle un tiempo de transición al efecto*/
+}
+
